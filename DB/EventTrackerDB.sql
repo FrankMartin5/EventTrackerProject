@@ -5,15 +5,15 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema ExerciseTracker
+-- Schema exercisetracker
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `ExerciseTracker` ;
+DROP SCHEMA IF EXISTS `exercisetracker` ;
 
 -- -----------------------------------------------------
--- Schema ExerciseTracker
+-- Schema exercisetracker
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `ExerciseTracker` DEFAULT CHARACTER SET utf8 ;
-USE `ExerciseTracker` ;
+CREATE SCHEMA IF NOT EXISTS `exercisetracker` DEFAULT CHARACTER SET utf8 ;
+USE `exercisetracker` ;
 
 -- -----------------------------------------------------
 -- Table `dummy`
@@ -29,7 +29,7 @@ ENGINE = InnoDB;
 SET SQL_MODE = '';
 DROP USER IF EXISTS fitness@localhost;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-CREATE USER 'fitness'@'localhost' IDENTIFIED BY 'superfit1';
+CREATE USER 'fitness'@'localhost' IDENTIFIED BY 'fitness';
 
 GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'fitness'@'localhost';
 
@@ -41,7 +41,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Data for table `dummy`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `ExerciseTracker`;
+USE `exercisetracker`;
 INSERT INTO `dummy` (`id`, `name`) VALUES (1, 'exercise');
 
 COMMIT;
