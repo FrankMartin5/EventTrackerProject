@@ -5,15 +5,15 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema exercisetracker
+-- Schema subscriptiontrackerdb
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `exercisetracker` ;
+DROP SCHEMA IF EXISTS `subscriptiontrackerdb` ;
 
 -- -----------------------------------------------------
--- Schema exercisetracker
+-- Schema subscriptiontrackerdb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `exercisetracker` DEFAULT CHARACTER SET utf8 ;
-USE `exercisetracker` ;
+CREATE SCHEMA IF NOT EXISTS `subscriptiontrackerdb` DEFAULT CHARACTER SET utf8 ;
+USE `subscriptiontrackerdb` ;
 
 -- -----------------------------------------------------
 -- Table `dummy`
@@ -27,11 +27,11 @@ CREATE TABLE IF NOT EXISTS `dummy` (
 ENGINE = InnoDB;
 
 SET SQL_MODE = '';
-DROP USER IF EXISTS fitness@localhost;
+DROP USER IF EXISTS subscription@localhost;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-CREATE USER 'fitness'@'localhost' IDENTIFIED BY 'fitness';
+CREATE USER 'subscription'@'localhost' IDENTIFIED BY 'subscription';
 
-GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'fitness'@'localhost';
+GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'subscription'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -41,7 +41,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Data for table `dummy`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `exercisetracker`;
+USE `subscriptiontrackerdb`;
 INSERT INTO `dummy` (`id`, `name`) VALUES (1, 'exercise');
 
 COMMIT;
