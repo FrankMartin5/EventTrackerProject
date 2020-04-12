@@ -48,7 +48,7 @@ class SubscriptionTest {
 	void test() {
 		assertNotNull(subscription);
 		assertEquals("netflix", subscription.getName());
-		assertEquals(LocalDateTime.of(2020, 05, 12, 02, 00, 00), subscription.getRenewalDate());
+		assertEquals("2020-05-12", subscription.getRenewalDate());
 		assertEquals(15.99, subscription.getCost());
 		assertEquals(LocalDateTime.of(2020, 04, 12, 02, 00, 00), subscription.getCreatedAt());
 		assertEquals(LocalDateTime.of(2020, 04, 12, 02, 00, 00), subscription.getUpdatedAt());

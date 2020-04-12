@@ -5,8 +5,8 @@ import java.util.List;
 import com.skilldistillery.subscription.entities.Subscription;
 
 public interface SubscriptionDAO {
-
-	public List<Subscription> findAll();
 	
+	Subscription createSubscription(Subscription subscription);
+	Subscription updateSubscription(Integer id, Subscription subscription);
 	
 }

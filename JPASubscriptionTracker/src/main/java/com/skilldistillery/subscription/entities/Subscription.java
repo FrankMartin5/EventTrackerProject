@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 public class Subscription {
 	
@@ -19,14 +22,16 @@ public class Subscription {
 	private String name;
 	
 	@Column(name = "renewal_date")
-	private LocalDateTime renewalDate;
+	private String renewalDate;
 	
 	private double cost;
 	
 	@Column(name = "created_at")
+	@CreationTimestamp
 	public LocalDateTime createdAt;
 	
 	@Column(name = "updated_at")
+	@UpdateTimestamp
 	public LocalDateTime updatedAt;
 	
 	public Subscription() {}
@@ -47,11 +52,11 @@ public class Subscription {
 		this.name = name;
 	}
 
-	public LocalDateTime getRenewalDate() {
+	public String getRenewalDate() {
 		return renewalDate;
 	}
 
-	public void setRenewalDate(LocalDateTime renewalDate) {
+	public void setRenewalDate(String renewalDate) {
 		this.renewalDate = renewalDate;
 	}
 
@@ -78,6 +83,16 @@ public class Subscription {
 	public void setUpdatedAt(LocalDateTime updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Subscription [id=").append(id).append(", name=").append(name).append(", renewalDate=")
+				.append(renewalDate).append(", cost=").append(cost).append(", createdAt=").append(createdAt)
+				.append(", updatedAt=").append(updatedAt).append("]");
+		return builder.toString();
+	}
+
 	
 	
 
