@@ -2,6 +2,9 @@ package com.skilldistillery.subscription.entities;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -10,13 +13,14 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class SubscriptionsTest {
+class SubscriptionTest {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Subscriptions subscriptions;
+	private Subscription subscription;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,7 +35,7 @@ class SubscriptionsTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		subscriptions = em.find(Subscriptions.class, 1);
+		subscription = em.find(Subscription.class, 1);
 	}
 
 	@AfterEach
@@ -40,9 +44,14 @@ class SubscriptionsTest {
 	}
 
 	@Test
+	@DisplayName("Test subscriptions entity mapping")
 	void test() {
-		assertNotNull(subscriptions);
-		assertEquals("netflix", subscriptions.getName());
+		assertNotNull(subscription);
+		assertEquals("netflix", subscription.getName());
+		assertEquals(LocalDateTime.of(2020, 05, 12, 02, 00, 00), subscription.getRenewalDate());
+		assertEquals(15.99, subscription.getCost());
+		assertEquals(LocalDateTime.of(2020, 04, 12, 02, 00, 00), subscription.getCreatedAt());
+		assertEquals(LocalDateTime.of(2020, 04, 12, 02, 00, 00), subscription.getUpdatedAt());
 	}
 
 }

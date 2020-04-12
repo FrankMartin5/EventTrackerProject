@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Subscriptions {
+public class Subscription {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class Subscriptions {
 	private String name;
 	
 	@Column(name = "renewal_date")
-	private Date renewalDate;
+	private LocalDateTime renewalDate;
 	
 	private double cost;
 	
@@ -29,7 +29,7 @@ public class Subscriptions {
 	@Column(name = "updated_at")
 	public LocalDateTime updatedAt;
 	
-	public Subscriptions() {}
+	public Subscription() {}
 
 	public int getId() {
 		return id;
@@ -47,11 +47,11 @@ public class Subscriptions {
 		this.name = name;
 	}
 
-	public Date getRenewalDate() {
+	public LocalDateTime getRenewalDate() {
 		return renewalDate;
 	}
 
-	public void setRenewalDate(Date renewalDate) {
+	public void setRenewalDate(LocalDateTime renewalDate) {
 		this.renewalDate = renewalDate;
 	}
 

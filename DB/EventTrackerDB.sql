@@ -16,14 +16,14 @@ CREATE SCHEMA IF NOT EXISTS `subscriptiontrackerdb` DEFAULT CHARACTER SET utf8 ;
 USE `subscriptiontrackerdb` ;
 
 -- -----------------------------------------------------
--- Table `subscriptions`
+-- Table `subscription`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `subscriptions` ;
+DROP TABLE IF EXISTS `subscription` ;
 
-CREATE TABLE IF NOT EXISTS `subscriptions` (
+CREATE TABLE IF NOT EXISTS `subscription` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `renewal_date` DATE NOT NULL,
+  `renewal_date` DATETIME NOT NULL,
   `cost` DOUBLE NOT NULL,
   `created_at` DATETIME NOT NULL,
   `updated_at` DATETIME NOT NULL,
@@ -42,11 +42,11 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `subscriptions`
+-- Data for table `subscription`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `subscriptiontrackerdb`;
-INSERT INTO `subscriptions` (`id`, `name`, `renewal_date`, `cost`, `created_at`, `updated_at`) VALUES (1, 'netflix', '2020-05-12', 15.99, '2020-04-12', '2020-04-12');
+INSERT INTO `subscription` (`id`, `name`, `renewal_date`, `cost`, `created_at`, `updated_at`) VALUES (1, 'netflix', '2020-05-12', 15.99, '2020-04-12', '2020-04-12');
 
 COMMIT;
 
