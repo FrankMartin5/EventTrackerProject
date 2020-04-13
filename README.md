@@ -8,14 +8,14 @@
 
 ### **Table of REST endpoints**
 
-| **HTTP Verb** | **URI**                 | **Request Body**                                               | **Response Body**                           | **Purpose**                         |
-| ------------- | ----------------------- | -------------------------------------------------------------- | ------------------------------------------- | ----------------------------------- |
-| **GET**       | /api/subscriptions      |                                                                | Collection of all _subscription entries_    | **List** or **Collection** endpoint |
-| **GET**       | /api/subscriptions/{id} |                                                                | Representation of entry at id number-- {id} | **Retrieve** endpoint               |
-| **POST**      | /api/subscriptions      | Representation of new _subscription_ entry                     | Description of the result of the operation  | **Create** endpoint                 |
-| **PUT**       | api/subscriptions/{id}  | Representation of a _new version_ of entry at id number--{id}  |                                             | **Replace** endpoint                |
-| **PATCH**     | api/subscriptions/{id}  | Description of changes to make to entry at id number--{gratId} |                                             | **Update** endpoint                 |
-| **DELETE**    | api/subscriptions/{id}  |                                                                |                                             | **Delete** route                    |
+| **HTTP Verb** | **URI**                 | **Request Body**                                              | **Response Body**                           | **Purpose**                         |
+| ------------- | ----------------------- | ------------------------------------------------------------- | ------------------------------------------- | ----------------------------------- |
+| **GET**       | /api/subscriptions      |                                                               | Collection of all _subscription entries_    | **List** or **Collection** endpoint |
+| **GET**       | /api/subscriptions/{id} |                                                               | Representation of entry at id number-- {id} | **Retrieve** endpoint               |
+| **POST**      | /api/subscriptions      | Representation of new _subscription_ entry                    | Description of the result of the operation  | **Create** endpoint                 |
+| **PUT**       | api/subscriptions/{id}  | Representation of a _new version_ of entry at id number--{id} |                                             | **Replace** endpoint                |
+| **PATCH**     | api/subscriptions/{id}  | Description of changes to make to entry at id number--{id}    |                                             | **Update** endpoint                 |
+| **DELETE**    | api/subscriptions/{id}  |                                                               |                                             | **Delete** route                    |
 
 ### How to Use
 
