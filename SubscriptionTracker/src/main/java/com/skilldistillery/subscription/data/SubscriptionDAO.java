@@ -8,5 +8,6 @@ public interface SubscriptionDAO {
 	
 	Subscription createSubscription(Subscription subscription);
 	Subscription updateSubscription(Integer id, Subscription subscription);
+	boolean deleteSubscription(Integer id);
 	
 }

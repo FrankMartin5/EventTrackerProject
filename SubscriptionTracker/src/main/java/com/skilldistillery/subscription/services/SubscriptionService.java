@@ -8,5 +8,4 @@ public interface SubscriptionService {
 
 	List<Subscription> findAllSubscriptions();
 	Subscription findSingleSubscription(Integer id);
-	boolean deleteSubscription(Integer id);
 }

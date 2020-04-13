@@ -36,6 +36,17 @@ public class SubscriptionDAOImpl implements SubscriptionDAO {
 		}
 		return managed;
 	}
-	
 
+	@Override
+	public boolean deleteSubscription(Integer id) {
+		boolean deleted = false;
+		Subscription sub = em.find(Subscription.class, id);
+		if (sub != null) {
+			em.remove(sub);
+			deleted = true;
+		}
+		return deleted;
+	}
+	
+	
 }

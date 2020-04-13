@@ -30,12 +30,8 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 		}
 		return null;
 	}
+	
+	
 
-
-	@Override
-	public boolean deleteSubscription(Integer id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }
